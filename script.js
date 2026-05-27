@@ -60,9 +60,9 @@ renderedUser(users);
 const handleSearch=((e)=>{
     let searchValue=e.target.value;
     let filteredUsers=users.filter((obj)=>{
-        return obj.name.toLowerCase().includes(searchValue)
+        return obj.name.toLowerCase().includes(searchValue.toLowerCase())
         ||
-        obj.email.toLowerCase().includes(searchValue);
+        obj.email.toLowerCase().includes(searchValue.toLowerCase());
     })
     renderedUser(filteredUsers)
 })
