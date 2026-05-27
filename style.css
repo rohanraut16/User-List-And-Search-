@@ -31,27 +31,32 @@ html,body{
         font-size: 1.2rem;
         margin-bottom: 20px;
     }
-    .userDetails{
+    .userContainer{
         display: flex;
-        gap: 20px;
-        align-items: center;
-        background-color: rgb(241, 244, 244);
-        padding: 8px 15px;
-        border-radius: 5px;
-        img{
-            height: 100%;
-            border-radius: 100%;
-            overflow: hidden;
-            width: 40px;
-            object-fit: cover;
-            object-position: top;
-        }
-        .usereInfo {
-            .name{
-                font-size: 15px;
+        flex-direction: column;
+        gap: 6px;
+        .userDetails{
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            background-color: rgb(241, 244, 244);
+            padding: 6px 15px;
+            border-radius: 5px;
+            img{
+                height: 100%;
+                border-radius: 100%;
+                overflow: hidden;
+                width: 40px;
+                object-fit: cover;
+                object-position: top;
             }
-            .email{
-                font-size: 12px;
+            .usereInfo {
+                .name{
+                    font-size: 15px;
+                }
+                .email{
+                    font-size: 12px;
+                }
             }
         }
     }
