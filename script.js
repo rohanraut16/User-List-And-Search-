@@ -1,6 +1,7 @@
-let userContainer=document.querySelector('.userContainer')
+let userContainer=document.querySelector('.userContainer');
+let inputSearch=document.querySelector('.inputSearch');
 
-const user=[
+const users=[
     {
         profileUrl:"img/model1.avif",
         name:"somiya",
@@ -32,3 +33,38 @@ const user=[
         email:'sstark@arya.com'
     },
 ]
+
+function renderedUser(arr){
+
+     userContainer.innerHTML='';
+    arr.map((obj)=>{
+        
+       
+        let{profileUrl,name,email}=obj
+        let divElement=document.createElement('div');
+        divElement.innerHTML=`
+         <div class="userDetails">
+                    <img src=${profileUrl} alt="error image loading">
+                    <div class="usereInfo">
+                        <h1 class="name">${name}</h1>
+                        <p class="email">${email}</p>
+                    </div>
+    
+                </div>
+        `
+        userContainer.append(divElement)
+    })
+}
+renderedUser(users);
+
+const handleSearch=((e)=>{
+    let searchValue=e.target.value;
+    let filteredUsers=users.filter((obj)=>{
+        return obj.name.toLowerCase().includes(searchValue)
+        ||
+        obj.email.toLowerCase().includes(searchValue);
+    })
+    renderedUser(filteredUsers)
+})
+
+inputSearch.addEventListener('input',handleSearch);
